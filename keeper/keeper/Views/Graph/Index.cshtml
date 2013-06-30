@@ -1,0 +1,18 @@
+﻿@using Dot.Processor
+@model object
+@{
+    ViewBag.Title = "Graph";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@Html.ActionLink("Graph List", "VisualizeGraph", "Home")
+<br />
+<br />
+
+<select onchange="javascript: window.location='@(Url.Action("Index", new { id= ViewContext.RouteData.Values["id"]}))?l='+$(this).val();" >
+    @foreach (var e in Enum.GetValues(typeof(LayoutEngine)))
+    {
+        <option value="@e" @(ViewContext.RequestContext.HttpContext.Request.Params["l"]==e.ToString() ? "selected" : "") >@e</option>
+    }
+</select>
+<br />
+@Html.Raw(Model)

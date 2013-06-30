@@ -114,5 +114,15 @@ namespace keeper.Controllers
 
             return View("Raw", html.ToString() as object);
         }
+
+        public ActionResult VisualizeGraph()
+        {
+            var f = Directory
+                .GetFiles(Server.MapPath("~/App_Data/dots"))
+                .Select(Path.GetFileName)
+                .ToArray();
+
+            return View(f);
+        }
     }
 }

@@ -1,0 +1,23 @@
+﻿@model string[]
+@{
+    ViewBag.Title = "Visualize Graph";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<style>
+    #gvlist ul li {
+        float: left;
+        margin-left: 10px;
+        margin-right: 10px;
+        width: 140px;
+    }
+</style>
+
+<div id="gvlist">
+    <ul class="fllist">
+        @foreach (var s in Model)
+        {
+            <li>@Html.ActionLink(s, "Index", new { Controller = "Graph", id = s })</li>
+        }
+    </ul>
+</div>

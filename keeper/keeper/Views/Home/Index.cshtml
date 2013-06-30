@@ -5,7 +5,11 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 <ul>
-    @foreach(var m in typeof(HomeController).GetMethods(BindingFlags.Instance|BindingFlags.Public).Where(s=>s.ReturnType==typeof(ActionResult)))
+    @foreach(var m in 
+        typeof(HomeController)
+            .GetMethods(BindingFlags.Instance|BindingFlags.Public)
+            .Where(s=>s.ReturnType==typeof(ActionResult) && s.Name!="Index")
+            )
     {
         <li>@Html.ActionLink(m.Name, m.Name)</li>
     }
