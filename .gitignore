@@ -51,7 +51,8 @@ _ReSharper*/
 ~$*
 
 #NuGet
-packages/
+!packages/repositories.config
+packages/*
 
 #ncrunch
 *ncrunch*
