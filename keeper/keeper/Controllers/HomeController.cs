@@ -51,25 +51,6 @@ namespace keeper.Controllers
             return View("Raw", html as object);
         }
 
-
-        public ActionResult Grpah(string l)
-        {
-            string src;
-            using (var f = new FileStream(Server.MapPath("~/app_data/graph.dot"), FileMode.Open))
-            {
-                src = f.AsString();
-            }
-
-            var eng = l == null ? LayoutEngine.dot : (LayoutEngine)Enum.Parse(typeof(LayoutEngine), l);
-
-            var html = dot
-                .Generate(src, eng, OutputFormat.svg)
-                .AsString();
-
-            return View("Raw", html as object);
-        }
-
-
         public ActionResult HistoryGraph()
         {
             runner.WorkingDirectory = Server.MapPath("~/")+"../../viz.js";
