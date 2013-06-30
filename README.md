@@ -24,6 +24,6 @@ Dot is research project whose main goals are visualizing, editing, exploring mat
 <ul>
 <li>Git extensions (installed with GNU unils in PATH option)</li>
 <li>Grpahviz 2.30.1(or similar http://www.graphviz.org/pub/graphviz/stable/windows/graphviz-2.30.1.msi)</li>
-<li>MVC 4 needed also</li>
+<li>ASP.NET MVC 4</li>
 <li>After cloning project you need to enable NuGetPackage Restore for correct build</li>
 </ul>
