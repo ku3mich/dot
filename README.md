@@ -7,7 +7,7 @@ Dot is research project whose main goals are visualizing, editing, exploring mat
 <li>ASP.NET MVC</li>
 <li>Multithreading</li>
 <li>SVG</li>
-<li>jQuery<li>
+<li>jQuery</li>
 <li>IoC</li>
 </ul>
 </p>
