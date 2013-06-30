@@ -20,8 +20,7 @@ Dot is research project whose main goals are visualizing, editing, exploring mat
 <li>http://www.graphviz.org/ (set of command line tools for dot language processing)
 <li>dot language http://en.wikipedia.org/wiki/DOT_(graph_description_language) 
 </ul>
-Installing:
------------
+<h3>Installing(Requirements)</h3>
 <ul>
 <li>Git extensions (installed with GNU unils in PATH option)</li>
 <li>Grpahviz 2.30.1(or similar http://www.graphviz.org/pub/graphviz/stable/windows/graphviz-2.30.1.msi)</li>
