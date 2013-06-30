@@ -4,17 +4,28 @@ dot
 Dot is research project whose main goals are visualizing, editing, exploring mathematical graph using modern web technologies as 
 <ul>
 <li>AJAX</li>
-ASP.NET MVC, Multithreading, SVG, jQuery, WEB API etc.
-Data for the graphs are taken from various sources(for example branching/merging of git repository)
-At the other side it is sample application which shows how simple we can use GrpahViz and dot language in every day life.
+<li>ASP.NET MVC</li>
+<li>Multithreading</li>
+<li>SVG</li>
+<li>jQuery<li>
+<li>IoC</li>
+</ul>
+</p>
+<p>Data for the graphs are taken from various sources(for example branching/merging of git repository)</p>
+<p>At the other side it is sample application which shows how simple we can use GrpahViz and dot language in every day life.</p>
 
 Project uses(based on works) :
-- https://github.com/theZiz/aha (coloerd console output)
-- http://www.graphviz.org/ (set of command line tools for dot language processing)
-- dot language (http://en.wikipedia.org/wiki/DOT_%28graph_description_language%29)
+==============================
+<ul>
+<li>https://github.com/theZiz/aha (coloerd console output)
+<li>http://www.graphviz.org/ (set of command line tools for dot language processing)
+<li>dot language http://en.wikipedia.org/wiki/DOT_(graph_description_language) 
+</ul>
 Installing:
-- Git extensions (installed with GNU unils in PATH option)
-- Grpahviz 2.30.1(or similar http://www.graphviz.org/pub/graphviz/stable/windows/graphviz-2.30.1.msi)
-- MVC 4 needed also
-- After cloning project you need to enable NuGetPackage Restore for correct build
-
+===========
+<ul>
+<li>Git extensions (installed with GNU unils in PATH option)</li>
+<li>Grpahviz 2.30.1(or similar http://www.graphviz.org/pub/graphviz/stable/windows/graphviz-2.30.1.msi)</li>
+<li>MVC 4 needed also</li>
+<li>After cloning project you need to enable NuGetPackage Restore for correct build</li>
+</ul>
