@@ -14,15 +14,14 @@ Dot is research project whose main goals are visualizing, editing, exploring mat
 <p>Data for the graphs are taken from various sources(for example branching/merging of git repository)</p>
 <p>At the other side it is sample application which shows how simple we can use GrpahViz and dot language in every day life.</p>
 
-Project uses(based on works) :
-==============================
+<h2>Project uses(based on works)</h2>
 <ul>
 <li>https://github.com/theZiz/aha (coloerd console output)
 <li>http://www.graphviz.org/ (set of command line tools for dot language processing)
 <li>dot language http://en.wikipedia.org/wiki/DOT_(graph_description_language) 
 </ul>
 Installing:
-===========
+-----------
 <ul>
 <li>Git extensions (installed with GNU unils in PATH option)</li>
 <li>Grpahviz 2.30.1(or similar http://www.graphviz.org/pub/graphviz/stable/windows/graphviz-2.30.1.msi)</li>
