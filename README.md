@@ -14,7 +14,7 @@ Dot is research project whose main goals are visualizing, editing, exploring mat
 <p>Data for the graphs are taken from various sources(for example branching/merging of git repository)</p>
 <p>At the other side it is sample application which shows how simple we can use GrpahViz and dot language in every day life.</p>
 
-<h2>Project uses(based on works)</h2>
+<h3>Project uses(based on works)</h3>
 <ul>
 <li>https://github.com/theZiz/aha (coloerd console output)
 <li>http://www.graphviz.org/ (set of command line tools for dot language processing)
