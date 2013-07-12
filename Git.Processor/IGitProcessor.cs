@@ -8,6 +8,5 @@ namespace Git.Processor
     public interface IGitProcessor
     {
         string WorkingDirectory { get; set; }
-
     }
 }

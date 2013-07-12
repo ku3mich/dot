@@ -8,7 +8,7 @@
 <br />
 <br />
 
-<select onchange="javascript: window.location='@(Url.Action("Index", new { id= ViewContext.RouteData.Values["id"]}))?l='+$(this).val();" >
+<select onchange="javascript: window.location='@(Url.Action("Index", new { file = ViewContext.RequestContext.HttpContext.Request.Params["file"]}))&l='+$(this).val();" >
     @foreach (var e in Enum.GetValues(typeof(LayoutEngine)))
     {
         <option value="@e" @(ViewContext.RequestContext.HttpContext.Request.Params["l"]==e.ToString() ? "selected" : "") >@e</option>

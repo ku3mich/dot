@@ -18,9 +18,9 @@ namespace keeper.Controllers
             dot = d;
         }
 
-        public ActionResult Index(string id, string l)
+        public ActionResult Index(string file, string l)
         {
-            string src = System.IO.File.ReadAllText(Server.MapPath("~/App_Data/dots/" + id));
+            string src = System.IO.File.ReadAllText(Server.MapPath("~/App_Data/dots/" + file));
 
             var eng = l == null ? LayoutEngine.dot : (LayoutEngine)Enum.Parse(typeof(LayoutEngine), l);
 
