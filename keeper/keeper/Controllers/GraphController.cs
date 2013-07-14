@@ -1,8 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.IO;
-using System.Linq;
-using System.Web;
+using System.Text;
 using System.Web.Mvc;
 using Dot.Processor;
 using Proc.Runner;
@@ -12,26 +10,44 @@ namespace keeper.Controllers
     public class GraphController : Controller
     {
         private readonly IDotProcessor dot;
-        
+
         public GraphController(IDotProcessor d)
         {
             dot = d;
         }
 
-        public ActionResult Index(string file, string l)
+        public ActionResult Render(string file, string l)
         {
-            string src = System.IO.File.ReadAllText(Server.MapPath("~/App_Data/dots/" + file));
+            var src = readSrc(file);
 
-            var eng = l == null ? LayoutEngine.dot : (LayoutEngine)Enum.Parse(typeof(LayoutEngine), l);
-
-            var d = dot.Generate(src, eng, OutputFormat.svg);
-            StreamWriter w = new StreamWriter(d);
+            StreamWriter w = new StreamWriter(GetGraphSvgStrem(src, l));
             w.WriteLine("<pre>");
             w.WriteLine(src);
             w.WriteLine("</pre>");
             w.Flush();
-            return View(d.AsString() as object);
+
+            return View(w.BaseStream.AsString() as object);
         }
 
+        public ActionResult Svg(string file, string l)
+        {
+            return new ContentResult
+                {
+                    ContentType = "image/svg+xml",
+                    ContentEncoding = Encoding.ASCII,
+                    Content = GetGraphSvgStrem(readSrc(file), l).AsString()
+                };
+        }
+
+        private string readSrc(string fileName)
+        {
+            return System.IO.File.ReadAllText(Server.MapPath("~/App_Data/dots/" + fileName));
+        }
+
+        private Stream GetGraphSvgStrem(string file, string l)
+        {
+            LayoutEngine eng = l.Parse();
+            return dot.Generate(file, eng, OutputFormat.svg);
+        }
     }
 }

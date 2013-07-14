@@ -162,7 +162,7 @@
     <Content Include="Views\Shared\Raw.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Home\VisualizeGraph.cshtml" />
-    <Content Include="Views\Graph\Index.cshtml" />
+    <Content Include="Views\Graph\Render.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\Logs\" />
