@@ -1,3 +1,6 @@
 [submodule "codemirror"]
 	path = codemirror
 	url = http://marijnhaverbeke.nl/git/codemirror
+[submodule "viz.js"]
+	path = viz.js
+	url = https://github.com/mdaines/viz.js.git
