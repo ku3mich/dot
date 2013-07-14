@@ -1,0 +1,22 @@
+﻿<script type="text/javascript">
+    $(function () {
+        $(".themeSelect-dd").change(function () {
+            $.cookie("theme", $(this).val(), { path: "/" });
+            location.reload();
+        });
+        $("option[value='" + $.cookie("theme") + "']", $(".themeSelect-dd")[0])
+              .each(function (i, v) {
+                  $(v).attr("selected", "selected");
+              });
+    });
+</script>
+
+<div class="themeSelect">
+    <select class="themeSelect-dd">
+        @foreach (var fl in Directory.GetFiles(Server.MapPath("~/Scripts/codemirror/theme")))
+        {
+            var th = Path.GetFileNameWithoutExtension(fl);
+            <option value="@th">@th</option>
+        }
+    </select>
+</div>

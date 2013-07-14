@@ -1,0 +1,43 @@
+﻿@using Dot.Processor
+@model object
+@{
+    ViewBag.Title = "Graph";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<script type="text/javascript">
+    $(function () {
+        $('.dotsrc').each(function () {
+            var $this = $(this),
+                $code = $this.text();
+
+            $this.empty();
+
+            window.cm = CodeMirror(this, {
+                smartIndent: true,
+                theme: $.cookie("theme"),
+                value: $code,
+                matchBrackets: true,
+                tabMode: "indent",
+                lineNumbers: true,
+                mode: 'clike',
+                readOnly: true
+            });
+            //autoFormatRange(range.from, range.to);
+        });
+    });
+</script>
+
+@Html.ActionLink("Graph List", "VisualizeGraph", "Home")
+<br />
+<br />
+
+<select onchange="javascript: window.location='@(Url.Action("Render", new { file = ViewContext.RequestContext.HttpContext.Request.Params["file"] }))&l='+$(this).val();" >
+    @foreach (var e in Enum.GetValues(typeof(LayoutEngine)))
+    {
+        <option value="@e" @(ViewContext.RequestContext.HttpContext.Request.Params["l"] == e.ToString() ? "selected" : "") >@e</option>
+    }
+</select>
+<br />
+
+@Html.Raw(Model)

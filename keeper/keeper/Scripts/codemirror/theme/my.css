@@ -1,0 +1,25 @@
+.cm-s-my span.cm-meta {color: #FF1717;}
+.cm-s-my span.cm-keyword { line-height: 1em; font-weight: bold; color: #7F0055; }
+.cm-s-my span.cm-atom {color: #219;}
+.cm-s-my span.cm-number {color: #164;}
+.cm-s-my span.cm-def {color: #00f;}
+.cm-s-my span.cm-variable {color: black}
+.cm-s-my span.cm-variable-2 {color: #0000C0;}
+.cm-s-my span.cm-variable-3 {color: #0000C0;}
+.cm-s-my span.cm-property {color: black;}
+.cm-s-my span.cm-operator {color: #006B24;}
+.cm-s-my span.cm-comment {color: green;}
+.cm-s-my span.cm-string {color: darkmagenta;}
+.cm-s-my span.cm-string-2 {color: #f50;}
+.cm-s-my span.cm-error {color: #f00;}
+.cm-s-my span.cm-qualifier {color: #555;}
+.cm-s-my span.cm-builtin {color: #30a;}
+.cm-s-my span.cm-bracket {color: #cc7;}
+.cm-s-my span.cm-tag {color: #170;}
+.cm-s-my span.cm-attribute {color: #00c;}
+.cm-s-my span.cm-link {color: #219;}
+
+.cm-s-my .CodeMirror-matchingbracket {
+	outline:1px solid grey;
+	color:black !important;
+}

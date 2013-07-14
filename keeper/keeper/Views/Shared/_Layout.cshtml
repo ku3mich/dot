@@ -4,11 +4,26 @@
 <head>
     <title>@ViewBag.Title</title>
     <script type="text/javascript" src="~/Scripts/jquery-1.7.2.min.js"></script>
+    <script type="text/javascript" src="~/Scripts/jquery.cookie.js"></script>
+    <!-- code mirror: start -->
+
+    <link rel="stylesheet" href="~/Scripts/codemirror/lib/codemirror.css">
+
+    @foreach (var fl in Directory.GetFiles(Server.MapPath("~/Scripts/codemirror/theme")))
+    {
+        <link rel="stylesheet" href="~/Scripts/codemirror/theme/@(Path.GetFileNameWithoutExtension(fl)).css">
+    }
+    <script src="~/Scripts/codemirror/lib/codemirror.js"></script>
+    <script src="~/Scripts/codemirror/mode/clike/clike.js"></script>
+    <script src="~/Scripts/codemirror/addon/format/formatting.js"></script>
+
+    <!-- code mirror: end -->
 </head>
 
 <body>
+    @Html.Action("ThemeSelect", "Theme")
     @Html.ActionLink("Home", "Index", "Home")
-    <br/>
+    <br />
     @RenderBody()
 </body>
 </html>

@@ -17,7 +17,7 @@
     <ul class="fllist">
         @foreach (var s in Model)
         {
-            <li>@Html.ActionLink(s, "Index", new { Controller = "Graph", file = s })</li>
+            <li>@Html.ActionLink(s, "Render", new { Controller = "Graph", file = s })</li>
         }
     </ul>
 </div>

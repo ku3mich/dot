@@ -80,33 +80,34 @@ namespace Proc.Runner
 
                 var w = new Stopwatch();
                 w.Start();
-                
-                if (input!=null)
+
+                if (input != null)
                     input.CopyTo(p.StandardInput.BaseStream);
 
                 p.StandardInput.BaseStream.WriteByte(26);  // 26 = ^Z = end of file
                 p.StandardInput.BaseStream.WriteByte(13);  // 13 = ^J(\n) return 
                 p.StandardInput.Flush();
 
-                Thread rdr = new Thread(() => {
-                                                  try
-                                                  {
-                                                      while (true)
-                                                      {
-                                                          readToEnd(p.StandardOutput.BaseStream, ms);
-                                                          readToEnd(p.StandardError.BaseStream, err);
+                Thread rdr = new Thread(() =>
+                {
+                    try
+                    {
+                        while (true)
+                        {
+                            readToEnd(p.StandardOutput.BaseStream, ms);
+                            readToEnd(p.StandardError.BaseStream, err);
 
-                                                          if (finished)
-                                                              break;
-                                                      }
-                                                  }
-                                                  catch //dummy catch
-                                                  {
-                                                  }
+                            if (finished)
+                                break;
+                        }
+                    }
+                    catch //dummy catch
+                    {
+                    }
                 });
                 rdr.Start();
 
-                while (rdr.ThreadState ==ThreadState.Running)
+                while (rdr.ThreadState == ThreadState.Running)
                 {
                     Thread.Sleep(5);
 
@@ -125,6 +126,9 @@ namespace Proc.Runner
                     wr.WriteLine("\nError : Execution timeout exceeded!");
                     wr.Flush();
                 }
+
+                ms.Seek(0, SeekOrigin.Begin);
+                err.Seek(0, SeekOrigin.Begin);
 
                 return new RunResult(p.ExitCode, ms, err, w.ElapsedMilliseconds);
             }
