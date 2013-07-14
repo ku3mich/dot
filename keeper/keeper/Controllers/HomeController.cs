@@ -53,7 +53,7 @@ namespace keeper.Controllers
 
         public ActionResult HistoryGraph()
         {
-            runner.WorkingDirectory = Server.MapPath("~/")+"../../viz.js";
+            runner.WorkingDirectory = Server.MapPath("~/") + "../../viz.js";
 
             StringBuilder html = new StringBuilder();
             // 0                1             2     3
@@ -70,7 +70,7 @@ namespace keeper.Controllers
                     var fields = line.Split('\t');
                     dotsrc.AppendFormat("\"{0}\"[label=\"{1}\\n{2}\"];\n", fields[0], fields[2], fields[3]);
                     var prnts = fields[1].Split(' ').ToArray();
-                    foreach (var prn in prnts.Where(s=>!string.IsNullOrWhiteSpace(s)))
+                    foreach (var prn in prnts.Where(s => !string.IsNullOrWhiteSpace(s)))
                     {
                         dotsrc.AppendFormat("\"{0}\"->\"{1}\";\n", prn, fields[0]);
                     }
