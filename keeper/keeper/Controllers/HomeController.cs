@@ -40,7 +40,7 @@ namespace keeper.Controllers
 
         public ActionResult GitLog()
         {
-            runner.WorkingDirectory = @"D:\test\dot\viz.js\";
+            runner.WorkingDirectory = Server.MapPath("~")+ @"\..\..\viz.js\";
             var str = runner
                 .Run("git", "--no-pager log --color=always -p --ignore-all-space --graph --word-diff")
                 .StdOut
